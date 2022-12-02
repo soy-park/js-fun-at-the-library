@@ -15,9 +15,26 @@ function unshelfBook(book, shelf) {
 };
 
 function listTitles(array) {
+  var list = "";
   for (var i = 0; i < array.length; i++) {
+    if (i < array.length - 1) {
+      list += array[i].title + ", "
+    } else {
+      list += array[i].title
+    }
   }
-};
+  return list;
+}
+
+function searchShelf(array, title) {
+  for (var i = 0; i < array.length; i++) {
+    if (array[i].title === title) {
+      return true 
+    } 
+  }
+  return false;
+}
+
 
 
 
@@ -29,5 +46,5 @@ module.exports = {
   shelfBook,
   unshelfBook,
   listTitles,
-  // searchShelf
+  searchShelf
 };
